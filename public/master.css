@@ -1,0 +1,59 @@
+html{
+    background: url(background1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.prof-box{
+    width: 800px;
+    height: 600px;
+    background: rgba(255,255,255,0.5);
+    color: black;
+    margin: 0 auto;
+    margin-top: 140px;
+    text-align: center;
+}
+
+.prof-pic{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+
+}
+h1{
+    font-family: "Monotype Corsiva";
+    font-weight: 100;
+    letter-spacing: 6px;
+    font-size: 40px;
+}
+
+p{
+    font-weight: 300;
+    }
+
+.social-icons{
+    font-size: 30px;
+}
+.social-icons a{
+    color: #2b669a;
+}
+.line-break{
+    width: 800px;
+    border-top: 1px solid white;
+}
+
+.line-break2{
+    width : 800px;
+    border-top: 3px solid white;
+}
+
+h4{
+    text-align: left;
+}
+
+ul{
+    text-align: left;
+}
