@@ -9,7 +9,7 @@ html{
 
 .prof-box{
     width: 800px;
-    height: 600px;
+    height: 800px;
     background: rgba(255,255,255,0.5);
     color: black;
     margin: 0 auto;
@@ -24,7 +24,7 @@ html{
 
 }
 h1{
-    font-family: "Monotype Corsiva";
+    font-family: "";
     font-weight: 100;
     letter-spacing: 6px;
     font-size: 40px;
@@ -47,7 +47,7 @@ p{
 
 .line-break2{
     width : 800px;
-    border-top: 3px solid white;
+    border-top: 1px solid white;
 }
 
 h4{
