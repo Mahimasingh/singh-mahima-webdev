@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # web-dev-template
 
 1. git clone https://github.com/jannunzi/web-dev-template.git
@@ -6,3 +7,6 @@
 1. mongod
 1. node server.js
 1. browse to localhost:3000
+=======
+# singh-mahima-webdev
+>>>>>>> 62f94b6f5250fe15e52e75975defc76f91f0ff12
