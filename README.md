@@ -1,15 +1,15 @@
-About Me :
+**About Me** :
 I am Computer Science graduate student in Northeastern University. I have an industry experience of 2 years. Well Northeastern University is adding alot to my skills, inclusive of this repo. Happy exploring my repository.
 
-Project
+**Project**
 
 This repository refers to the assignments and project I developed while pursuing the Web development Course in Northeastern University (CS5610) Summer 2017.
 
-Getting Started
+**Getting Started**
 
 Clone the repository using https://github.com/Mahimasingh/singh-mahima-webdev.git
 
-Prerequisites
+**Prerequisites**
 
 1. Set up Node.js locally
 
@@ -27,16 +27,16 @@ Git is a distributed source control system that allows developers collaborate an
 You are good to go!
 
 
-Authors
+**Authors**
 
 Mahima Singh
 
 
-Acknowledgments
+**Acknowledgments**
 
 Jose Annunziato
 
-Links
+**Links**
 
 1. Root to the hosted environment on Heroku : https://singh-mahima-webdev.herokuapp.com/index.html
 
