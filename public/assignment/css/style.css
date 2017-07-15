@@ -14,6 +14,18 @@
 .wrapper {
     border:1px solid #000;
     display:inline-block;
+    width: 100%;
 }
 
+.widget-list h1
+{
+    text-align: center;
+}
 
+.widget-list h3
+{
+    text-align: center;
+}
+.widget-list .image{
+    text-align: center;
+}
