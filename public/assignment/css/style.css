@@ -29,3 +29,14 @@
 .widget-list .image{
     text-align: center;
 }
+.choose-button
+{
+    width: 25%;
+    float: left;
+}
+
+.textbox-image
+{
+    width: 75%;
+    float: right;
+}
