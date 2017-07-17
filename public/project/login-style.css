@@ -1,0 +1,38 @@
+body{
+    background: url(background-login.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.brand-name{
+    font-family: "Papyrus";
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.username
+{
+    width: 25%;
+    font-family: Papyrus;
+    font-size: 40px;
+}
+
+.password
+{
+    width: 25%;
+    font-family: Papyrus;
+    font-size: 40px;
+}
+
+.login-button{
+    width : 25%;
+
+}
+
+.sign-up-button{
+    width: 25%;
+}
