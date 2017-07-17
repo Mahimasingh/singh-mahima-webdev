@@ -1,5 +1,5 @@
 body{
-    background: url(background-login.jpg) no-repeat center center fixed;
+    background-color: #c9e2b3;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -35,4 +35,15 @@ body{
 
 .sign-up-button{
     width: 25%;
+}
+
+h3
+{
+    font-family: Papyrus;
+    font-weight: 100;
+    font-size: 25px;
+}
+
+.register-form{
+    font-family: Papyrus;
 }
