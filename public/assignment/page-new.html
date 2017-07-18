@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- To disable pinch to zoom-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <title>New Page</title>
     <link href ="../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -26,9 +30,11 @@
 
     </nav>
 
+    <div class = "textbox-style">
     <label for="name">Name</label>
     <input name ="Name"
            class="form-control"
+           type="text"
            id="name"
            placeholder="Page name"/>
     <br>
@@ -36,8 +42,10 @@
     <label for="title">Title</label>
     <input name ="title"
            class="form-control"
+           type="text"
            id="title"
            placeholder="Page title"/>
+    </div>
     <br>
 
 

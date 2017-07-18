@@ -12,3 +12,24 @@ html{
     font-size: 40px;
 }
 
+.login-button
+{
+    width: 100%;
+}
+
+.username
+{
+    width: 50%;
+    font-family: Papyrus;
+    font-size: 20px;
+    color: #843534;
+}
+
+.password
+{
+    width: 50%;
+    font-family: Papyrus;
+    font-size: 20px;
+    color: #843534;
+}
+

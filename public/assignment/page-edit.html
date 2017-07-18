@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- To disable pinch to zoom-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <title>Edit Page</title>
     <link href ="../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -17,7 +21,7 @@
                 <a href="page-list.html">
                     <span class="pull-left white-class glyphicon glyphicon-chevron-left"></span></a>
                 &nbsp
-                New Page
+                Edit Page
             </div>
             <br>
             <a href="page-list.html">
@@ -28,9 +32,10 @@
     </nav>
 
 
-
+    <div class = "textbox-style">
     <label for="name">Name</label>
     <input name ="Name"
+           type="text"
            readonly
            class="form-control"
            id="name"
@@ -40,12 +45,17 @@
     <label for="title">Title</label>
     <input name ="title"
            class="form-control"
+           type="text"
            id="title"
            placeholder="Page Title"/>
+    </div>
     <br>
+
+    <div class="btn-style">
     <a href = "page-list.html" class="btn btn-default btn-block btn-danger"
        href="#"
        role="button">Delete</a>
+    </div>
 
 
 
