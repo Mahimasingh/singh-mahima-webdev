@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- To disable pinch to zoom-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <title>Register</title>
     <link href ="../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
     <h1>Register</h1>
+    <br>
+
+    <div class = "textbox-style">
     <label for="username">Username</label>
     <input name ="username"
            class="form-control"
+           type="text"
            id="username"
             placeholder="alice"/>
+
+    <br>
 
     <label for="password">Password</label>
     <input name ="password"
@@ -21,20 +32,27 @@
            id="password"
             placeholder="pdr$%^G"/>
 
+    <br>
+
     <label for="verify password">Verify Password</label>
     <input name ="verify password"
            type="password"
            class="form-control"
            id="verify password"
             placeholder="pdr$%^G"/>
+    </div>
     <br>
+
+    <div class="btn-style">
     <a class="btn btn-default btn-block btn-primary"
        href="profile.html"
        role="button">Register</a>
+        <br>
 
     <a class="btn btn-default btn-block btn-danger"
        href="login.html"
        role="button">Cancel</a>
+    </div>
 
 </div>
 </body>
