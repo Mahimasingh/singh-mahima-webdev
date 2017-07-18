@@ -37,8 +37,10 @@
 
 .textbox-image
 {
-    width: 75%;
-    float: right;
+    width: 100%;
+    float: left;
+
+
 }
 
 .textbox-style{
@@ -48,3 +50,5 @@
 .btn-style{
     width:25%
 }
+
+​
