@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WamApp">
 <head>
     <meta charset="utf-8">
     <!-- To disable pinch zoom in-->
@@ -11,6 +11,11 @@
 
     <title>Assignments Index Page</title>
 
+    <script src="../vendor/angular/angular.js"></script>
+    <script src="../vendor/angular/angular-route.js"></script>
+    <script src="app.js"></script>
+
+
     <!-- Bootstrap core CSS -->
     <link href="../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
@@ -18,10 +23,13 @@
 
     <!-- Custom styles for this template -->
     <link href="css/home-theme.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+
+<div ng-view>
 
 <h1>Welcome to Assignments Page</h1>
 
@@ -37,6 +45,8 @@
     </div>
 
 
+
+</div>
 
 </div>
 

@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- To disable pinch to zoom-->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <title>Profile</title>
-    <link href ="../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="profileController">
     <nav class="navbar navbar-default">
             <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,6 +25,7 @@
     <input class="form-control"
            id="Username"
            type="text"
+           ng-model="user.username"
            readonly
            value="jannunzi"/>
     <br>
@@ -58,6 +46,7 @@
     <input type="text"
            class="form-control"
            id="First Name"
+           ng-model="user.firstName"
            placeholder="Jose"/>
 
     <br>
@@ -68,6 +57,7 @@
     <input type="text"
            class="form-control"
            id="Last Name"
+           ng-model="user.lastName"
            placeholder="Annunziato"/>
 
     </div>
@@ -103,5 +93,3 @@
 
 </div>
 
-</body>
-</html>
