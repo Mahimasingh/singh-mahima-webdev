@@ -1,39 +1,26 @@
 <div class="container-fluid">
 
-
-    <br>
-
-
-
     <div ng-controller="loginController">
 
+        <div ng-show="model.errorMessage" class="alert alert-danger">
+            {{model.errorMessage}}
+        </div>
 
 
         <h1>Login</h1>
-
-        <div ng-show="errorMessages" class="alert alert-danger">
-
-            {{errorMessages}}
-
-        </div>
-
-
-        <div ng-show = "welcomeUser" class="alert alert-info">
-            Welcome Back {{welcomeUser.username}}
-        </div>
         <br>
 
         <label for="username">Username</label>
         <input name ="username"
                class="form-control"
                id="username"
-               ng-model="user.username"
+               ng-model="model.user.username"
                placeholder="alice"/>
 
         <label for="password">Password</label>
         <input name ="password"
                type="password"
-               ng-model="user.password"
+               ng-model="model.user.password"
                class="form-control"
                id="password"
                placeholder="p#$%vd"/>
@@ -44,14 +31,11 @@
 
         <a class="btn btn-default btn-block btn-primary"
 
-           ng-click="login(user)"
+           ng-click="model.login(model.user)"
            role="button">Login</a>
 
-        {{username}}
-
-
         <a class="btn btn-default btn-block btn-success"
-           href="register.html"
+           href="#!/register"
            role="button">Register</a>
 
     </div>
