@@ -38,5 +38,23 @@
                 controller: "websiteEditController",
                 controllerAs: "model"
             })
+
+            .when("/user/:userId/website/:websiteId/page", {
+                templateUrl: "pages/templates/page-list.view.client.html",
+                controller: "pageListController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/website/:websiteId/page/new", {
+                templateUrl: "pages/templates/page-new.view.client.html",
+                controller: "pageNewController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/website/:websiteId/page/:pageId", {
+                templateUrl: "pages/templates/page-edit.view.client.html",
+                controller: "pageEditController",
+                controllerAs: "model"
+            })
     }
 })();

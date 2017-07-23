@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- To disable pinch to zoom-->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <title>New Page</title>
-    <link href ="../../../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/style.css" rel="stylesheet">
-</head>
 <body>
 <div class="container-fluid">
     <nav class="navbar navbar-default">
@@ -23,7 +12,7 @@
                 New Page
             </div>
             <br>
-            <a href="page-list.view.client.html">
+            <a ng-click="model.createNewPage(page)">
                 <span class="white-class pull-right glyphicon glyphicon-ok"></span></a>
         </div>
 
@@ -32,8 +21,9 @@
 
     <div class = "textbox-style">
     <label for="name">Name</label>
-    <input name ="Name"
+    <input name ="name"
            class="form-control"
+           ng-model="model.page.name"
            type="text"
            id="name"
            placeholder="Page name"/>
@@ -42,9 +32,10 @@
     <label for="title">Title</label>
     <input name ="title"
            class="form-control"
+           ng-model="model.page.description"
            type="text"
            id="title"
-           placeholder="Page title"/>
+           placeholder="Page Description"/>
     </div>
     <br>
 
@@ -65,5 +56,3 @@
 
 
 
-</body>
-</html>
