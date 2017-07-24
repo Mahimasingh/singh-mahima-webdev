@@ -1,57 +1,57 @@
+<div class = "jga">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-brand">
 
-<body>
-<div class="container-fluid">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-brand">
-
-                <a href="page-list.view.client.html">
-                    <span class="pull-left white-class glyphicon glyphicon-chevron-left"></span></a>
-                &nbsp
-                New Page
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
+                        <span class="pull-left glyphicon glyphicon-chevron-left"></span></a>
+                    &nbsp
+                    New Page
+                </div>
+                <br>
+                <a ng-click="model.createNewPage(model.page)">
+                    <span class="pull-right glyphicon glyphicon-ok"></span></a>
             </div>
+
+
+        </nav>
+
+        <div class = "textbox-style">
+            <label for="name">Name</label>
+            <input name ="name"
+                   class="form-control"
+                   ng-model="model.page.name"
+                   type="text"
+                   id="name"
+                   placeholder="Page name"/>
             <br>
-            <a ng-click="model.createNewPage(page)">
-                <span class="white-class pull-right glyphicon glyphicon-ok"></span></a>
-        </div>
 
-
-    </nav>
-
-    <div class = "textbox-style">
-    <label for="name">Name</label>
-    <input name ="name"
-           class="form-control"
-           ng-model="model.page.name"
-           type="text"
-           id="name"
-           placeholder="Page name"/>
-    <br>
-
-    <label for="title">Title</label>
-    <input name ="title"
-           class="form-control"
-           ng-model="model.page.description"
-           type="text"
-           id="title"
-           placeholder="Page Description"/>
-    </div>
-    <br>
-
-
-
-
-    <nav class="navbar navbar-default navbar-fixed-bottom container-fluid">
-        <div class="container">
+            <label for="title">Title</label>
+            <input name ="title"
+                   class="form-control"
+                   ng-model="model.page.description"
+                   type="text"
+                   id="title"
+                   placeholder="Page Description"/>
         </div>
         <br>
-        <a href="../../users/templates/profile.view.client.html">
-        <span class="white-class glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
-        </a>
-    </nav>
 
 
+
+
+        <nav class="navbar navbar-default navbar-fixed-bottom container-fluid">
+            <div class="container">
+            </div>
+            <br>
+            <a href="#!/profile/{{model.userId}}">
+                <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+            </a>
+        </nav>
+
+
+    </div>
 </div>
 
 

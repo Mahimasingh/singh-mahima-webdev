@@ -33,7 +33,7 @@
                 controllerAs: "model"
             })
 
-            .when("/user/:userId/website/:websiteId/edit", {
+            .when("/user/:userId/website/:websiteId", {
                 templateUrl: "websites/template/websites-edit.view.client.html",
                 controller: "websiteEditController",
                 controllerAs: "model"
@@ -56,5 +56,28 @@
                 controller: "pageEditController",
                 controllerAs: "model"
             })
+
+
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget", {
+                templateUrl: "widgets/templates/widget-list.view.client.html",
+                controller: "widgetListController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget/new", {
+                templateUrl: "widgets/templates/widget-chooser.view.client.html",
+                controller: "widgetNewController",
+                controllerAs: "model"
+            })
+
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", {
+                templateUrl: "widgets/templates/widget-edit.view.client.html",
+                controller: "widgetEditController",
+                controllerAs: "model"
+            })
+
+
+
+
     }
 })();

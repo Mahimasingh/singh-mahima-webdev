@@ -2,7 +2,7 @@
 
     angular
         .module("WamApp")
-        .controller("websiteEditController", websiteEditController)
+        .controller("websiteEditController", websiteEditController);
 
     function websiteEditController(websiteService, $routeParams,$location) {
         var model = this;

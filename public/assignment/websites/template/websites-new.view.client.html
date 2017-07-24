@@ -1,120 +1,121 @@
+<div class="jga">
 
-<div class="container-fluid">
-
-
-    <div class="row">
-        <div class="col-xs-3 visible-lg">
+    <div class="container-fluid">
 
 
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-brand">
+        <div class="row">
+            <div class="col-xs-3 visible-lg">
 
-                        <a href="#!/user/{{model.userId}}/website">
-                            <span class="pull-left white-class glyphicon glyphicon-chevron-left"></span></a>
-                        &nbsp
-                        Websites
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-brand">
+
+                            <a href="#!/user/{{model.userId}}/website">
+                                <span class="pull-left glyphicon glyphicon-chevron-left"></span></a>
+                            &nbsp
+                            Websites
+                        </div>
+                        <br>
+
+
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+
                     </div>
-                    <br>
+                </nav>
 
-                        <span class="pull-right white-class glyphicon glyphicon-plus"></span>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-
+                <div class="container-fluid">
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <div class="row">
+                                <div class="col-xs-4">Name</div>
+                                <div class="col-xs-6 col-sm-3">Updated</div>
+                                <div class="col-sm-3 hidden-xs">Visits</div>
+                                <div class="col-xs-2">
+                                    <a href="#!/user/{{model.userId}}/website/new" style="color:white">
+                                        <span class="white-class pull-right glyphicon glyphicon-plus"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li ng-repeat="website in model.websites" class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-4">{{website.name}}</div>
+                                <div class="col-xs-6 col-sm-3">2017-07-05</div>
+                                <div class="col-sm-3 hidden-xs">3,123,234</div>
+                                <div class="col-xs-2">
+                                    <a ng-click="model.findWebById(website)">
+                                        <span class="glyphicon glyphicon-cog pull-right"></span></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
 
-            <div class="container-fluid">
-                <ul class="list-group">
-                    <li class="list-group-item active">
-                        <div class="row">
-                            <div class="col-xs-4">Name</div>
-                            <div class="col-xs-6 col-sm-3">Updated</div>
-                            <div class="col-sm-3 hidden-xs">Visits</div>
-                            <div class="col-xs-2">
-                                <a href="#!/user/{{model.userId}}/website/new" style="color:white">
-                                    <span class="white-class pull-right glyphicon glyphicon-plus"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li ng-repeat="website in model.websites" class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-4">{{website.name}}</div>
-                            <div class="col-xs-6 col-sm-3">2017-07-05</div>
-                            <div class="col-sm-3 hidden-xs">3,123,234</div>
-                            <div class="col-xs-2">
-                                <a ng-click="model.findWebById(website)">
-                                    <span class="white-class glyphicon glyphicon-cog pull-right"></span></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
             </div>
+            <div class="col-lg-9 col-xs-12 col-sm-12 col-md-12">
 
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-brand">
+
+                            <a href="#!/user/{{model.userId}}/website">
+                                <span class="pull-left glyphicon glyphicon-chevron-left"></span></a>
+                            &nbsp
+                            New Website
+                        </div>
+                        <br>
+                        <a ng-click="model.createNewWebsite(model.website)">
+
+                            <span class="pull-right glyphicon glyphicon-ok"></span></a>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+
+                    </div>
+                </nav>
+
+                <div ng-show="model.error" class="alert alert-danger">
+                    {{model.error}}
+                </div>
+
+                <b>
+                    <label for="name">Name</label> </b>
+                <input class="form-control"
+                       id="name"
+                       ng-model="model.website.name"
+                       type="text"
+                       placeholder="www.facebook.com"/>
+                <br>
+
+                <label for="description">Description</label> </b>
+                <textarea class="form-control"
+                          rows="5"
+                          ng-model = "model.website.description"
+                          id="description"
+                          placeholder="This is the website where you will waste the most precious time of your life."></textarea>
+
+
+            </div>
         </div>
-        <div class="col-lg-9 col-xs-12 col-sm-12 col-md-12">
 
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-brand">
 
-                        <a href="#!/user/{{model.userId}}/website">
-                            <span class="pull-left white-class glyphicon glyphicon-chevron-left"></span></a>
-                        &nbsp
-                        New Website
-                    </div>
-                    <br>
-                    <a ng-click="model.createNewWebsite(model.websites)">
 
-                        <span class="pull-right white-class glyphicon glyphicon-ok"></span></a>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-
-                </div>
-            </nav>
-
-            <div ng-show="model.error" class="alert alert-danger">
-                {{model.error}}
+        <nav class="navbar navbar-default navbar-fixed-bottom container-fluid">
+            <div class="container">
             </div>
-
-            <b>
-            <label for="name">Name</label> </b>
-            <input class="form-control"
-                   id="name"
-                   ng-model="model.websites.name"
-                   type="text"
-                   placeholder="www.facebook.com"/>
             <br>
-
-            <label for="description">Description</label> </b>
-            <textarea class="form-control"
-                      rows="5"
-                      ng-model = "model.websites.description"
-                      id="description"
-                      placeholder="This is the website where you will waste the most precious time of your life."></textarea>
+            <a href=#!/profile/{{model.userId}}">
+                <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+            </a>
+        </nav>
 
 
-        </div>
+
+
     </div>
-
-
-
-    <nav class="navbar navbar-default navbar-fixed-bottom container-fluid">
-        <div class="container">
-        </div>
-        <br>
-        <a href="../../users/templates/profile.view.client.html">
-        <span class="white-class glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
-        </a>
-    </nav>
-
-
-
-
-
 
 </div>
 

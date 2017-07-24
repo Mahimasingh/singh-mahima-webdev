@@ -12,6 +12,7 @@
         model.updateUser = updateUser;
         model.unregister = unregister;
 
+
         function init() {
             model.user = userService.findUserById(userId);
         }
@@ -29,6 +30,8 @@
 
 
         }
+
+
     }
 
 })();

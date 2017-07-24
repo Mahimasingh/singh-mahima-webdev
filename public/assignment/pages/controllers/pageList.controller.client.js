@@ -17,7 +17,7 @@
 
         function findPageforId(page) {
             var page = pageService.findPageById(page._id);
-            $location.url("/user/" + model.userId + "/website/" + model.websiteId +"/page" + page._id);
+            $location.url("/user/" + model.userId + "/website/" + model.websiteId +"/page/" + page._id);
             return page;
         }
     }

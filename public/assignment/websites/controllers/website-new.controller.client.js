@@ -23,7 +23,7 @@
 
         function findWebById(website) {
             var _website = websiteService.findWebsiteById(website._id);
-            $location.url("/user/" + model.userId + "/website/" + website._id +"/edit");
+            $location.url("/user/" + model.userId + "/website/" + website._id);
             return _website;
         }
     }

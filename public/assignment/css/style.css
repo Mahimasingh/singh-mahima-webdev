@@ -1,11 +1,15 @@
-.navbar-default{
-    background-color: #2e6da4;
-    color: white;
+
+
+.jga .navbar-default {
+    background-color: #5061a0;
+    border-color: #b9def0;
 }
 
-.navbar-default .navbar-brand{
-    color : white;
+.jga .navbar-default .navbar-brand {
+    color: black;
 }
+
+
 .white-class
 {
     color : white;
@@ -51,4 +55,10 @@
     width:25%
 }
 
-​
+.pageList{
+    padding: 20px;
+}
+
+​.websiteList{
+    padding: 20px;
+}

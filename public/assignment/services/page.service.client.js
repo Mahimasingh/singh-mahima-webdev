@@ -40,10 +40,10 @@
 
         function createPage(webId, page) {
             new_id = (new Date()).getTime() + "";
-            var new_page = {"_id" : new_id, "name" : page.name , "websiteId" : webId, "description" : page.description};
 
+            var new_page = {"_id" : new_id, "name" : page.name , "websiteId" : webId, "description" : page.description};
             pages.push(new_page);
-            return new_page;
+            return;
 
 
         }
@@ -78,7 +78,7 @@
             for(var p in pages){
                 var _page = pages[p];
                 if(_page._id === pageId){
-                    var index = pages.indexOf(_website);
+                    var index = pages.indexOf(_page);
                     if(index > -1){
                         pages.splice(index,1);
 

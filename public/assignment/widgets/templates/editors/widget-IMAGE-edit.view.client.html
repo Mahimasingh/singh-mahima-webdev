@@ -1,0 +1,77 @@
+<div class="container-fluid">
+
+    <div class="textbox-style">
+
+        <label for="name">Widget Id</label>
+        <input name ="Name"
+               class="form-control"
+               type="text"
+               ng-model = "model.widget._id"
+               id="name"
+        />
+        <br>
+
+        <label for="text">Text</label>
+        <input name ="text"
+               class="form-control"
+               type="text"
+               id="text"
+        />
+        <br>
+
+        <label for="url">URL</label>
+        <input name ="url"
+               class="form-control"
+               id="url"
+               ng-model = "model.widget.url"
+               type="url"
+               placeholder="https://piazza.com/class/j2963bd8jpz51j?cid=638"
+        />
+        <br>
+
+        <label for="width">Width</label>
+        <input name ="width"
+               class="form-control"
+               id="width"
+               ng-model="model.widget.width"
+               placeholder="100%"
+        />
+        <br>
+
+        <label for="upload">Upload</label>
+        <!--div class="wrapper"-->
+
+        <div class="textbox-image">
+            <input name ="uplaod"
+                   class="form-control"
+                   id="upload"
+                   ng-model="model.widget.url"
+                   type="file"
+                   placeholder="No File Choosen"/>
+        </div>
+        <!--div class="choose-button">
+        <!--a class="btn btn-default btn-block btn-primary"
+        role="button">Choose File</a>
+        </div-->
+        <!--/div-->
+
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <div class="btn-style">
+        <a class="btn btn-default btn-block btn-primary"
+           ng-click="model.uploadImage(model.widget)"
+           role="button">Upload Image</a>
+
+        <a class="btn btn-default btn-block btn-danger"
+           ng-click="model.deleteWid(model.widget)"
+           role="button">Delete</a>
+    </div>
+
+
+
+
+</div>
