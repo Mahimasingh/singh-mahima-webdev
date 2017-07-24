@@ -1,5 +1,4 @@
 
-
 .jga .navbar-default {
     background-color: #5061a0;
     border-color: #b9def0;
@@ -55,10 +54,11 @@
     width:25%
 }
 
-.pageList{
-    padding: 20px;
+
+.list-group{
+    margin-top: 100px;
 }
 
-​.websiteList{
-    padding: 20px;
+.list-group.websiteNew{
+    margin-top: 20px;
 }
