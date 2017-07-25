@@ -1,9 +1,10 @@
+
 <div class="container-fluid">
 <div class="textbox-style">
-    <label for="name">Widget Id</label>
+    <label for="name">Widget Name</label>
     <input name ="Name"
            class="form-control"
-           ng-model="model.widget._id"
+           ng-model="model.widget.name"
            type="text"
            id="name"
     />
@@ -24,6 +25,7 @@
     <select ng-model="model.widget.size" class="form-control">
 
         <option selected="selected">{{model.widget.size}}</option>
+
         <option>1</option>
         <option>2</option>
         <option>3</option>

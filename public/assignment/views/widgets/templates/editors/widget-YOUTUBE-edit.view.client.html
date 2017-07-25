@@ -1,11 +1,10 @@
 <div class = "container-fluid">
 <div class="textbox-style">
-    <label for="name">Widget Id</label>
+    <label for="name">Name</label>
     <input name ="Name"
            class="form-control"
            id="name"
-           readonly
-           ng-model="model.widget._id"
+           ng-model="model.widget.name"
     />
     <br>
 
@@ -13,6 +12,7 @@
     <input name ="text"
            class="form-control"
            id="text"
+           ng-model="model.widget.text"
            ng-model="model.widget.text"
     />
     <br>

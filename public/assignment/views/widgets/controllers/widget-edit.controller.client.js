@@ -14,6 +14,7 @@
             model.updateForWidget = updateForWidget;
 
 
+
             function init(){
                 model.widget = widgetService.findWidgetById(model.widgetId);
 
@@ -37,6 +38,11 @@
                 widgetService.updateWidget(widget._id,widget);
                 $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
 
+            }
+
+            function findWidgetType(wId){
+                var type = widgetService.giveWidgetType(wId);
+                return type;
             }
 
         }
