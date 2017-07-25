@@ -1,11 +1,14 @@
-.navbar-default{
-    background-color: #2e6da4;
-    color: white;
+
+.jga .navbar-default {
+    background-color: #5061a0;
+    border-color: #b9def0;
 }
 
-.navbar-default .navbar-brand{
-    color : white;
+.jga .navbar-default .navbar-brand {
+    color: black;
 }
+
+
 .white-class
 {
     color : white;
@@ -51,4 +54,27 @@
     width:25%
 }
 
-​
+
+.list-group{
+    margin-top: 100px;
+}
+
+.list-group.websiteNew{
+    margin-top: 20px;
+}
+
+.home-heading{
+    font-family: "Papyrus";
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.btn-style-home{
+    padding-top: 100px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+
+}

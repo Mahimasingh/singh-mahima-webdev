@@ -1,0 +1,123 @@
+<div class="jga">
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-xs-3 visible-lg">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-brand">
+
+                        <a href="#!/user/{{model.userId}}/website">
+                            <span class="pull-left glyphicon glyphicon-chevron-left"></span></a>
+                        &nbsp
+                        Websites
+                    </div>
+                    <br>
+
+
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+
+                </div>
+            </nav>
+
+
+
+            <div class="container-fluid">
+                <ul class="list-group websiteNew">
+                    <li class="list-group-item active">
+                        <div class="row">
+                            <div class="col-xs-8">Name</div>
+                            <div class="col-xs-4">
+                                <a href="#!/user/{{model.userId}}/website/new">
+
+                                    <span class="pull-right white-class glyphicon glyphicon-plus"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li ng-repeat="web in model.websites" class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-8">{{web.name}}</div>
+                            <div class="col-xs-4">
+                                <a ng-click="model.findWebById(website)" class="pull-right">
+                                    <span class="glyphicon glyphicon-cog"></span></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+
+        <div class="col-lg-9 col-xs-12 col-sm-12 col-md-12">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-brand">
+
+                        <a href="#!/user/{{model.userId}}/website">
+                            <span class="pull-left  glyphicon glyphicon-chevron-left"></span></a>
+                        &nbsp
+                        Edit Website
+                    </div>
+                    <br>
+                    <a href="#!/user/{{model.userId}}/website">
+                        <span class="pull-right  glyphicon glyphicon-ok"></span></a>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+
+                </div>
+            </nav>
+
+            <b>
+            <label for="name">Website Name</label> </b>
+            <input class="form-control"
+                   readonly
+                   ng-model="model.website.name"
+                   type="text"
+                   id="name"
+                   placeholder="www.facebook.com"/>
+            <br>
+
+            <label for="description">Description</label> </b>
+            <textarea class="form-control"
+                      rows="5"
+                      ng-model = "model.website.description"
+                      id="description"
+                      placeholder="This is the website where you will waste the most precious time of your life."></textarea>
+            <br>
+
+            <a class="btn btn-default btn-block btn-danger"
+               ng-click="model.deleteWeb(model.website)"
+               role="button">Delete</a>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom container-fluid">
+        <div class="container">
+        </div>
+        <br>
+        <a href="#!/profile/{{model.userId}}">
+        <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+        </a>
+    </nav>
+
+
+
+
+
+</div>
+</div>
+

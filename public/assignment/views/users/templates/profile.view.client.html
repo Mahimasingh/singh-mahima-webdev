@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- To disable pinch to zoom-->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <title>Profile</title>
-    <link href ="../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="profileController">
     <nav class="navbar navbar-default">
             <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Profile</a>
+                    <a class="navbar-brand" >Profile</a>
                 </div>
                 <br>
 
 
-                <a href="profile.html">
-                    <span class="glyphicon glyphicon-ok white-class pull-right "></span></a>
+
             </div>
 
 
@@ -31,6 +17,11 @@
 
     </nav>
 
+    <div ng-show="model.message" class="alert alert-success">
+        {{model.message}}
+    </div>
+
+
     <div class = "textbox-style">
     <b>
         <label for="Username">Username</label>
@@ -38,6 +29,7 @@
     <input class="form-control"
            id="Username"
            type="text"
+           ng-model="model.user.username"
            readonly
            value="jannunzi"/>
     <br>
@@ -58,6 +50,7 @@
     <input type="text"
            class="form-control"
            id="First Name"
+           ng-model="model.user.firstName"
            placeholder="Jose"/>
 
     <br>
@@ -68,6 +61,7 @@
     <input type="text"
            class="form-control"
            id="Last Name"
+           ng-model="model.user.lastName"
            placeholder="Annunziato"/>
 
     </div>
@@ -77,13 +71,20 @@
 
     <div class="btn-style">
     <a class="btn btn-default btn-block btn-primary"
-       href="websites-list.html"
+       href="#!/user/{{model.user._id}}/website"
        role="button">Websites</a>
-        <br>
 
     <a class="btn btn-default btn-block btn-danger"
-       href="login.html"
+       href="#!/login"
        role="button">Logout</a>
+
+        <a class="btn btn-default btn-block btn-danger"
+           ng-click="model.unregister(model.user)"
+           role="button">Unregister</a>
+
+        <a class="btn btn-default btn-block btn-primary"
+           ng-click="model.updateUser(model.user)"
+           role="button">Update</a>
     </div>
 
 
@@ -92,7 +93,7 @@
         <div class="container">
         </div>
         <br>
-        <a href="profile.html">
+        <a href="profile.view.client.html">
         <span class="white-class glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
         </a>
     </nav>
@@ -103,5 +104,3 @@
 
 </div>
 
-</body>
-</html>

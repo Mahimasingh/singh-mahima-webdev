@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- To disable pinch to zoom-->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <title>Edit Page</title>
-    <link href ="../vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
+<div class = "jga">
 <div class="container-fluid">
 
     <nav class="navbar navbar-default">
@@ -18,14 +6,14 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-brand">
 
-                <a href="page-list.html">
-                    <span class="pull-left white-class glyphicon glyphicon-chevron-left"></span></a>
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
+                    <span class="pull-left glyphicon glyphicon-chevron-left"></span></a>
                 &nbsp
                 Edit Page
             </div>
             <br>
-            <a href="page-list.html">
-                <span class="white-class pull-right glyphicon glyphicon-ok"></span></a>
+            <a ng-click="model.updateForPage(model.page)">
+                <span class="pull-right glyphicon glyphicon-ok"></span></a>
         </div>
 
 
@@ -36,6 +24,7 @@
     <label for="name">Name</label>
     <input name ="Name"
            type="text"
+           ng-model="model.page.name"
            readonly
            class="form-control"
            id="name"
@@ -45,6 +34,7 @@
     <label for="title">Title</label>
     <input name ="title"
            class="form-control"
+           ng-model="model.page.description"
            type="text"
            id="title"
            placeholder="Page Title"/>
@@ -52,8 +42,7 @@
     <br>
 
     <div class="btn-style">
-    <a href = "page-list.html" class="btn btn-default btn-block btn-danger"
-       href="#"
+    <a ng-click="model.deleteForPage(model.page)" class="btn btn-default btn-block btn-danger"
        role="button">Delete</a>
     </div>
 
@@ -64,15 +53,14 @@
         <div class="container">
         </div>
         <br>
-        <a href="profile.html">
-        <span class="white-class glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+        <a href="#!/profile/{{model.userId}}">
+        <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
         </a>
     </nav>
 
+</div>
 </div>
 
 
 
 
-</body>
-</html>

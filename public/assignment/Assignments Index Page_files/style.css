@@ -1,0 +1,54 @@
+.navbar-default{
+    background-color: #2e6da4;
+    color: white;
+}
+
+.navbar-default .navbar-brand{
+    color : white;
+}
+.white-class
+{
+    color : white;
+}
+
+.wrapper {
+    border:1px solid #000;
+    display:inline-block;
+    width: 100%;
+}
+
+.widget-list h1
+{
+    text-align: center;
+}
+
+.widget-list h3
+{
+    text-align: center;
+}
+.widget-list .image{
+    text-align: center;
+}
+.choose-button
+{
+    width: 25%;
+    float: left;
+}
+
+.textbox-image
+{
+    width: 100%;
+    float: left;
+
+
+}
+
+.textbox-style{
+    width: 25%;
+}
+
+.btn-style{
+    width:25%
+}
+
+​
