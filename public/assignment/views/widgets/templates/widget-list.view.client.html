@@ -28,27 +28,27 @@
                 <span class =  "pull-right glyphicon glyphicon-align-justify"></span>
             </div>
             <!--<ng-include src="model.getWidgetTemplateUrl(widget.widgetType)"></--ng-include>-->
-            <div ng-switch="widget.widgetType">
+            <div ng-switch="widget.widgetType" style="margin-bottom: 50px">
                 <div ng-switch-when="HEADING" >
-                    <ng-include src="'widgets/templates/widget-HEADING.view.client.html'"></ng-include>
+                    <ng-include src="'views/widgets/templates/widget-HEADING.view.client.html'"></ng-include>
 
                 </div>
 
 
                 <div ng-switch-when="IMAGE">
-                    <ng-include src="'widgets/templates/widget-IMAGE.view.client.html'"></ng-include>
+                    <ng-include src="'views/widgets/templates/widget-IMAGE.view.client.html'"></ng-include>
 
                 </div>
 
 
                 <div ng-switch-when="YOUTUBE">
 
-                    <ng-include src="'widgets/templates/widget-YOUTUBE.view.client.html'"></ng-include>
+                    <ng-include src="'views/widgets/templates/widget-YOUTUBE.view.client.html'"></ng-include>
 
                 </div>
 
                 <div ng-switch-when="HTML">
-                    <ng-include src="'widgets/templates/widget-HTML.view.client.html'"></ng-include>
+                    <ng-include src="'views/widgets/templates/widget-HTML.view.client.html'"></ng-include>
 
                 </div>
             </div>

@@ -15,7 +15,7 @@
             { "_id": "678", "widgetType": "YOUTUBE", "pageId": "321", "width": "100%",
                 "url": "https://youtu.be/AM2Ivdi9c4E" },
             { "_id": "789", "widgetType": "HTML", "pageId": "321", "text": "<p>Lorem ipsum</p>"},
-            { "_id": "790", "widgetType": "HEADING", "pageId": "222", "text": "<p>Lorem ipsum</p>"}
+            { "_id": "790", "widgetType": "HEADING", "pageId": "222","size" : 1, "text": "Lorem ipsum"}
         ];
 
 
@@ -40,7 +40,7 @@
             return _widgets;
         }
 
-        // createWebsite(userId, website)
+
 
         function createWidget(pageId, widget){
             widget.pageId = pageId;
@@ -68,7 +68,7 @@
         function updateWidget(widgetId, widget){
             for(var w in widgets) {
                 if(widgets[w]._id === widgetId) {
-                    widgets[u] = widget;
+                    widgets[w] = widget;
                     return;
                 }
             }

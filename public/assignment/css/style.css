@@ -62,3 +62,19 @@
 .list-group.websiteNew{
     margin-top: 20px;
 }
+
+.home-heading{
+    font-family: "Papyrus";
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.btn-style-home{
+    padding-top: 100px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+
+}

@@ -19,12 +19,16 @@
     />
     <br>
 
+
     <label>Size</label>
-    <select class="form-control" ng-model = "model.widget.size">
+    <select ng-model="model.widget.size" class="form-control">
+
+        <option selected="selected">{{model.widget.size}}</option>
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
+        <option>5</option>
         <option>5</option>
         <option>6</option>
 
@@ -32,7 +36,7 @@
     </select>
 
 </div>
-
+    <br>
     <div class="btn-style">
         <a class="btn btn-default btn-block btn-danger"
            ng-click="model.deleteWid(model.widget)"

@@ -6,75 +6,97 @@
 
     function configuration($routeProvider) {
         $routeProvider
+
+            .when("/", {
+                templateUrl: "home/home.view.client.html",
+                controller : "homeController",
+                controllerAs : "model"
+
+            })
+
             .when("/login", {
-                templateUrl: "users/templates/login.view.client.html",
+                templateUrl: "views/users/templates/login.view.client.html",
                 controller: "loginController",
                 controllerAs: "model"
             })
             .when("/register", {
-                templateUrl: "users/templates/register.view.client.html",
+                templateUrl: "views/users/templates/register.view.client.html",
                 controller: "registerController",
                 controllerAs: "model"
             })
             .when("/profile/:userId", {
-                templateUrl: "users/templates/profile.view.client.html",
+                templateUrl: "views/users/templates/profile.view.client.html",
                 controller: "profileController",
                 controllerAs: "model"
             })
             // website routes
             .when("/user/:userId/website", {
-                templateUrl: "websites/template/websites-list.view.client.html",
+                templateUrl: "views/websites/template/websites-list.view.client.html",
                 controller: "websiteListController",
                 controllerAs: "model"
             })
             .when("/user/:userId/website/new", {
-                templateUrl: "websites/template/websites-new.view.client.html",
+                templateUrl: "views/websites/template/websites-new.view.client.html",
                 controller: "websiteNewController",
                 controllerAs: "model"
             })
 
             .when("/user/:userId/website/:websiteId", {
-                templateUrl: "websites/template/websites-edit.view.client.html",
+                templateUrl: "views/websites/template/websites-edit.view.client.html",
                 controller: "websiteEditController",
                 controllerAs: "model"
             })
 
             .when("/user/:userId/website/:websiteId/page", {
-                templateUrl: "pages/templates/page-list.view.client.html",
+                templateUrl: "views/pages/templates/page-list.view.client.html",
                 controller: "pageListController",
                 controllerAs: "model"
             })
 
             .when("/user/:userId/website/:websiteId/page/new", {
-                templateUrl: "pages/templates/page-new.view.client.html",
+                templateUrl: "views/pages/templates/page-new.view.client.html",
                 controller: "pageNewController",
                 controllerAs: "model"
             })
 
             .when("/user/:userId/website/:websiteId/page/:pageId", {
-                templateUrl: "pages/templates/page-edit.view.client.html",
+                templateUrl: "views/pages/templates/page-edit.view.client.html",
                 controller: "pageEditController",
                 controllerAs: "model"
             })
 
 
             .when("/user/:userId/website/:websiteId/page/:pageId/widget", {
-                templateUrl: "widgets/templates/widget-list.view.client.html",
+                templateUrl: "views/widgets/templates/widget-list.view.client.html",
                 controller: "widgetListController",
                 controllerAs: "model"
             })
 
+
             .when("/user/:userId/website/:websiteId/page/:pageId/widget/new", {
-                templateUrl: "widgets/templates/widget-chooser.view.client.html",
+                templateUrl: "views/widgets/templates/widget-chooser.view.client.html",
                 controller: "widgetNewController",
                 controllerAs: "model"
             })
 
+
+
+
             .when("/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", {
-                templateUrl: "widgets/templates/widget-edit.view.client.html",
+                templateUrl: "views/widgets/templates/widget-edit.view.client.html",
                 controller: "widgetEditController",
                 controllerAs: "model"
             })
+
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget/new/:widgetType", {
+                templateUrl: "views/widgets/templates/widget-new.view.client.html",
+                controller: "widgetNewController",
+                controllerAs: "model"
+            })
+
+
+
+
 
 
 

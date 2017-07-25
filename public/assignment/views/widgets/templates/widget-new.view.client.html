@@ -7,26 +7,25 @@
                 <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
                     <span class="pull-left glyphicon glyphicon-chevron-left"></span></a>
                 &nbsp
-                Widget Editor
+                Widget New
             </div>
 
             <br>
-            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+            <a ng-click="model.createNewWidget(model.widget)">
                 <span class="pull-right glyphicon glyphicon-ok"></span></a>
         </div>
     </nav>
 
 
-
-    <div ng-switch="model.widget.widgetType">
+    <div ng-switch="model.widgetType">
         <div ng-switch-when="HEADING">
-            <ng-include src="'widgets/templates/editors/widget-HEADING-edit.view.client.html'">
+            <ng-include src="'views/widgets/templates/editors/widget-HEADING-edit.view.client.html'">
         </div>
         <div ng-switch-when="IMAGE">
-            <ng-include src="'widgets/templates/editors/widget-IMAGE-edit.view.client.html'">
+            <ng-include src="'views/widgets/templates/editors/widget-IMAGE-edit.view.client.html'">
         </div>
         <div ng-switch-when="YOUTUBE">
-            <ng-include src="'widgets/templates/editors/widget-YOUTUBE-edit.view.client.html'">
+            <ng-include src="'views/widgets/templates/editors/widget-YOUTUBE-edit.view.client.html'">
         </div>
     </div>
 
