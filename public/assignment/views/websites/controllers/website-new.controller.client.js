@@ -5,21 +5,27 @@
 
     function websiteNewController(websiteService, $routeParams,$location) {
         var model = this;
-        model.createNewWebsite = createNewWebsite;
+        model.createWebsite = createWebsite;
         model.findWebById = findWebById;
 
         model.userId = $routeParams.userId;
         model.widgetType = $routeParams.widgetType;
 
         function init() {
-            model.websites = websiteService.findWebsitesForUser(model.userId);
+            websiteService.findWebsitesForUser(model.userId)
+                .then(function (websites) {
+                    model.websites = websites;
+
+                })
         }
         init();
 
-        function createNewWebsite(website) {
-
-            var web = websiteService.createWebsite(model.userId,website);
-            $location.url("/user/" + model.userId + "/website");
+        function createWebsite(website) {
+            websiteService
+                .createWebsite(model.userId, website)
+                .then(function () {
+                    $location.url("/user/"+model.userId+"/website");
+                });
         }
 
         function findWebById(website) {

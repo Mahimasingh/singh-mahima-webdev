@@ -3,17 +3,9 @@
         .module("WamApp")
         .service("websiteService", websiteService);
 
-    function websiteService() {
+    function websiteService($http) {
 
-        var websites = [
-            { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
-            { "_id": "234", "name": "Tweeter",     "developerId": "456", "description": "Lorem" },
-            { "_id": "456", "name": "Gizmodo",     "developerId": "456", "description": "Lorem" },
-            { "_id": "890", "name": "Go",          "developerId": "123", "description": "Lorem" },
-            { "_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
-            { "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
-            { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
-        ];
+
 
         var api = {
             "findWebsitesForUser": findWebsitesForUser,
@@ -25,38 +17,29 @@
         return api;
 
         function findWebsitesForUser(userId) {
-            var sites = [];
 
-            for(var w in websites) {
-                if(websites[w].developerId === userId) {
-                    sites.push(websites[w]);
-                }
-            }
-
-            return sites;
+            var url = "/api/user/" + userId + "/website";
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                });
         }
+
 
         // createWebsite(userId, website)
 
-        function createWebsite(userId, website){
-                    website.developerId = userId;
-                    website._id = (new Date()).getTime() + "";
-                    websites.push(website);
-                    return website;
-
-
+        function createWebsite(userId, website) {
+            var url = "/api/user/" + userId + "/website" + websiteId;
+            return $http.post(url, website);
         }
 
         // findWebsiteById(websiteId)
 
-        function findWebsiteById(websiteId){
+        function findWebsiteById(userId, websiteId){
 
-            for(var w in websites){
-                if(websites[w]._id === websiteId){
-                    return websites[w];
-                }
-            }
-            return null;
+            var url = "/api/user/" + userId + "/website/" + websiteId;
+            return $http.get(url);
+
         }
 
         // updateWebsite(websiteId, website)
