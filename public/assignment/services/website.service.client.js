@@ -29,7 +29,7 @@
         // createWebsite(userId, website)
 
         function createWebsite(userId, website) {
-            var url = "/api/user/" + userId + "/website" + websiteId;
+            var url = "/api/user/" + userId + "/website";
             return $http.post(url, website);
         }
 
