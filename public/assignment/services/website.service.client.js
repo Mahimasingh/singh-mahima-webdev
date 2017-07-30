@@ -44,30 +44,19 @@
 
         // updateWebsite(websiteId, website)
 
-        function updateWebsite(websiteId, website){
-            for(var w in websites) {
-                if(websites[w]._id === websiteId) {
-                    websites[u] = website;
-                    return;
-                }
-            }
-            return null
+        function updateWebsite(userId,websiteId, website){
+
+            var url = "/api/user/" + userId + "/website/" + websiteId;
+            return $http.put(url,website);
         }
 
         // deleteWebsite(websiteId)
 
-        function deleteWebsite(websiteId){
-            for(var w in websites){
-                var _website = websites[w];
-                if(_website._id === websiteId){
-                    var index = websites.indexOf(_website);
-                    if(index > -1){
-                        websites.splice(index,1);
+        function deleteWebsite(userId,websiteId){
 
-                    }
-                }
-            }
-            return websites;
+            var url="/api/user/" + userId + "/website/" + websiteId;
+            return $http.delete(url);
+
         }
 
 

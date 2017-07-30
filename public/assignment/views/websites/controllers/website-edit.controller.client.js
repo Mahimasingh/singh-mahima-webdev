@@ -29,13 +29,19 @@
         init();
 
         function updateWeb(website) {
-            websiteService.updateWebsite(website._id, website);
-            $location.url("/user/" + model.userId + "/website");
+            websiteService.updateWebsite(model.userId,website._id, website)
+                .then(function(response){
+                    $location.url("/user/" + model.userId + "/website");
+                });
+
         }
 
         function deleteWeb(website){
-            websiteService.deleteWebsite(website._id);
-            $location.url("/user/" + model.userId + "/website");
+            websiteService.deleteWebsite(model.userId,website._id)
+                .then(function(response){
+                    $location.url("/user/" + model.userId + "/website");
+                })
+
         }
 
         function findWebByUserId(website) {

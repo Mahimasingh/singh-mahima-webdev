@@ -17,6 +17,26 @@ app.post("/api/user",registerUser);
 
 app.put("/api/user/:userId",updateUser);
 
+app.delete("/api/user/:userId",deleteUser);
+
+function deleteUser(req,res) {
+
+    userId = req.params.userId;
+
+    for(var u in users){
+        var _user = users[u];
+        if(_user._id === userId){
+            var index = users.indexOf(_user);
+            if(index > -1){
+                users.splice(index,1);
+
+            }
+        }
+    }
+    res.send(users);
+
+}
+
 function getAllUsers(req,response) {
     response.send(users);
 }
