@@ -39,17 +39,20 @@
         />
         <br>
 
-        <label for="upload">Upload</label>
+        <label>Upload</label>
         <!--div class="wrapper"-->
 
-        <div class="textbox-image">
-            <input name ="uplaod"
-                   class="form-control"
-                   id="upload"
-                   ng-model="model.widget.url"
-                   type="file"
-                   placeholder="No File Choosen"/>
-        </div>
+
+        <form action="/api/upload"   method="post" enctype="multipart/form-data">
+            <input  name="myFile"    type="file" class="form-control"/>
+            <input  name="width"     value="{{model.widget.width}}" style="display: none"/>
+            <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+            <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+            <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+            <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
+            <button type="submit"    class="btn btn-block btn-primary"  role="button">Upload Image</button>
+        </form>
+
         <!--div class="choose-button">
         <!--a class="btn btn-default btn-block btn-primary"
         role="button">Choose File</a>
@@ -63,9 +66,7 @@
     <br>
     <br>
     <div class="btn-style">
-        <a class="btn btn-default btn-block btn-primary"
-           ng-click="model.uploadImage(model.widget)"
-           role="button">Upload Image</a>
+
 
         <a class="btn btn-default btn-block btn-danger"
            ng-click="model.deleteWid(model.widget)"
