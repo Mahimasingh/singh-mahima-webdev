@@ -15,10 +15,19 @@
 
 
 
+
+
+
+
+
             function init(){
+
                 widgetService.findWidgetById(model.widgetId)
                     .then(function(response){
+
                         model.widget = response.data;
+                        model.widgetType = model.widget.widgetType;
+
                     })
 
             }

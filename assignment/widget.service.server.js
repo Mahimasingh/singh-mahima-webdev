@@ -1,9 +1,9 @@
 var app = require("../express");
-app.post("/api/page/:pageId/widget",createWidget);
-app.get("/api/page/:pageId/widget",findAllWidgetsForPage);
-app.get("api/widget/:widgetId", findWidgetById);
+app.get("/api/widget/:widgetId", findWidgetById);
 app.put("/api/widget/:widgetId",updateWidget);
 app.delete("/api/widget/:widgetId",deleteWidget);
+app.post("/api/page/:pageId/widget",createWidget);
+app.get("/api/page/:pageId/widget",findAllWidgetsForPage);
 app.put("/api/page/:pageId/widget",orderWidget);
 
 
@@ -19,6 +19,7 @@ var widgets = [
     { "_id": "789", "widgetType": "HTML", "pageId": "321", "text": "<p>Lorem ipsum</p>","name" : "Html Boy"},
     { "_id": "790", "widgetType": "HEADING", "pageId": "222","size" : 1, "text": "Lorem ipsum","name" : "Heading Champ!"}
 ];
+
 
 function orderWidget(req,res) {
 
@@ -72,7 +73,7 @@ function pushElementsRight(res,startIndex,endIndex) {
 
     for(var w = widgets.length - 1; w >= 0; w--){
         if(w == startIndex){
-            
+
             var element = widgets[w];
             while(w > endIndex){
                 widgets[w] = widgets[w-1];
@@ -92,8 +93,10 @@ function createWidget(req,res) {
 
     pageId = req.params.pageId;
     widget = req.body;
+    _widgetType = req.query.widgetType;
     widget.pageId = pageId;
     widget._id = (new Date()).getTime() + "";
+    widget.widgetType = _widgetType;
     widgets.push(widget);
     res.json(widget);
     return;
@@ -101,6 +104,7 @@ function createWidget(req,res) {
 }
 
 function findWidgetById(req,res) {
+    
     widgetId = req.params.widgetId;
 
     for(var w in widgets){

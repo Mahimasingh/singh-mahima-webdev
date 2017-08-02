@@ -15,8 +15,11 @@
             "updateWidget": updateWidget,
             "deleteWidget" : deleteWidget
 
+
         };
         return api;
+
+
 
         function findWidgetsByPageId(pageId) {
 
@@ -27,9 +30,9 @@
 
 
 
-        function createWidget(pageId, widget){
+        function createWidget(pageId, widget,widgetType){
 
-            var url = "/api/page/" + pageId + "/widget";
+            var url = "/api/page/" + pageId + "/widget?widgetType=" + widgetType;
             return $http.post(url, widget);
 
         }
@@ -38,7 +41,7 @@
 
         function findWidgetById(widgetId){
 
-            var url = "api/widget/" + widgetId;
+            var url = "/api/widget/" + widgetId;
                 return $http.get(url);
 
         }
