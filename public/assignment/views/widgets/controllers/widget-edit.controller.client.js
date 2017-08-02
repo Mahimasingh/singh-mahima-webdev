@@ -10,7 +10,7 @@
             model.pageId = $routeParams.pageId;
             model.widgetId = $routeParams.widgetId;
             model.deleteWid = deleteWid;
-            model.uploadImage = uploadImage;
+
             model.updateForWidget = updateForWidget;
 
 
@@ -44,15 +44,7 @@
 
             }
 
-            function uploadImage(widget){
 
-                widgetService.updateWidget(widget._id,widget)
-                    .then(function(response){
-                        $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
-                    })
-
-
-            }
 
             function updateForWidget(widget){
                 widgetService.updateWidget(widget._id,widget)

@@ -58,7 +58,7 @@
 
         function deleteWidget(widgetId){
 
-            var url = "/api/widget/" + widgetType;
+            var url = "/api/widget/" + widgetId;
 
             return $http.delete(url);
         }
