@@ -14,9 +14,10 @@
                 },
                 stop: function (event, ui) {
                     endIndex = $(ui.item).index();
-                    console.log([startIndex, endIndex]);
-                    $http.put("/api/page/" + $routeParams.pageId + "/widget/start=" + startIndex + "&end=" + endIndex);
-                }
+                    //console.log([startIndex, endIndex]);
+                    $http.put("/api/page/" + $routeParams.pageId + "/widget?startIndex=" + startIndex + "&endIndex=" + endIndex);
+                },
+                axis: 'y'
             });
         }
         return {

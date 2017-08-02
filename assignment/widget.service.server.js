@@ -4,7 +4,7 @@ app.get("/api/page/:pageId/widget",findAllWidgetsForPage);
 app.get("api/widget/:widgetId", findWidgetById);
 app.put("/api/widget/:widgetId",updateWidget);
 app.delete("/api/widget/:widgetId",deleteWidget);
-app.put("/api/page/:pageId/widget/start=:startIndex&end=:endIndex",orderWidget);
+app.put("/api/page/:pageId/widget",orderWidget);
 
 
 var widgets = [
@@ -22,8 +22,10 @@ var widgets = [
 
 function orderWidget(req,res) {
 
-    startIndex = req.params.startIndex;
-    endIndex = req.params.endIndex;
+    startIndex = req.query.startIndex;
+    endIndex = req.query.endIndex;
+    console.log(startIndex);
+    console.log(endIndex);
 
     if(endIndex > startIndex){
         pushElementsLeft(res,startIndex, endIndex)
@@ -42,10 +44,13 @@ function orderWidget(req,res) {
 
 
 function pushElementsLeft(res,startIndex, endIndex) {
+
     for(var w=0 ; w < widgets.length; w++){
-        if(w === startIndex){
+
+        if(w == startIndex){
+
             var element = widgets[w];
-            while(w <= endIndex){
+            while(w < endIndex){
 
                 widgets[w] = widgets[w+1];
                 w = w + 1;
@@ -54,7 +59,7 @@ function pushElementsLeft(res,startIndex, endIndex) {
             break;
         }
     }
-
+    console.log(widgets);
     res.send(widgets);
 
 }
@@ -64,18 +69,21 @@ function pushElementsLeft(res,startIndex, endIndex) {
 
 
 function pushElementsRight(res,startIndex,endIndex) {
+
     for(var w = widgets.length - 1; w >= 0; w--){
-        if(w === endIndex){
+        if(w == startIndex){
+            
             var element = widgets[w];
-            while(w >= startIndex){
-                widget[w] = widget[w-1];
+            while(w > endIndex){
+                widgets[w] = widgets[w-1];
                 w = w - 1;
             }
-            widgets[startIndex] = element;
+            widgets[endIndex] = element;
             break;
         }
 
     }
+    console.log(widgets);
     res.send(widgets);
 
 }
@@ -97,7 +105,7 @@ function findWidgetById(req,res) {
 
     for(var w in widgets){
         if(widgets[w]._id === widgetId){
-            res.send(angular.copy(widgets[w]));
+            res.send(widgets[w]);
             return;
         }
     }
