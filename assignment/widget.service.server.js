@@ -23,20 +23,55 @@ var widgets = [
 
 function orderWidget(req,res) {
 
+
     startIndex = req.query.startIndex;
     endIndex = req.query.endIndex;
-    console.log(startIndex);
-    console.log(endIndex);
 
-    if(endIndex > startIndex){
-        pushElementsLeft(res,startIndex, endIndex)
+    console.log("Inside server order widgets. The start Index is" + startIndex + "The end Index is" + endIndex);
+
+    pageId = req.params.pageId;
+    widgets_for_pageid = giveArrayForPageId(pageId);
+    effective_startIndex = giveArrayIndexForWidget(widgets_for_pageid[startIndex]._id);
+    effective_endIndex = giveArrayIndexForWidget(widgets_for_pageid[endIndex]._id);
+
+    console.log("The effective start index is" + effective_startIndex + "end Index is" + effective_endIndex);
+
+    if(effective_endIndex > effective_startIndex){
+        pushElementsLeft(res,effective_startIndex, effective_endIndex)
     }
 
-    else if(endIndex < startIndex){
-        pushElementsRight(res,startIndex,endIndex);
+    else if(effective_endIndex < effective_startIndex){
+        pushElementsRight(res,effective_startIndex, effective_endIndex);
     }
 
     res.send(widgets);
+
+}
+
+function giveArrayForPageId(pageId) {
+
+    var _widgets= [];
+    for(var w in widgets) {
+        if(widgets[w].pageId === pageId) {
+            _widgets.push(widgets[w]);
+        }
+    }
+
+    return _widgets;
+
+
+}
+
+function giveArrayIndexForWidget(widgetId) {
+
+    for(var w in widgets){
+        if(widgets[w]._id === widgetId){
+            return w;
+
+        }
+    }
+
+
 
 }
 
@@ -104,7 +139,7 @@ function createWidget(req,res) {
 }
 
 function findWidgetById(req,res) {
-    
+
     widgetId = req.params.widgetId;
 
     for(var w in widgets){
