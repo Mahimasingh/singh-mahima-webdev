@@ -19,8 +19,11 @@
             </div>
         </nav>
 
+        <div class="widget-list">
+            <div wbdv-sortable="">
 
-        <div ng-repeat="widget in model.widgets">
+            <div ng-repeat="widget in model.widgets">
+
             <div class = "widget-list-toolbar">
 
                 <a href = "#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
@@ -54,6 +57,8 @@
                     <ng-include src="'views/widgets/templates/widget-HTML.view.client.html'"></ng-include>
 
                 </div>
+            </div>
+            </div>
             </div>
 
             <nav class="navbar navbar-default navbar-fixed-bottom container-fluid">

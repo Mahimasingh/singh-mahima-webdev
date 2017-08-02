@@ -16,34 +16,45 @@
 
 
             function init(){
-                model.widget = widgetService.findWidgetById(model.widgetId);
+                widgetService.findWidgetById(model.widgetId)
+                    .then(function(response){
+                        model.widget = response.data;
+                    })
 
             }
             init();
 
             function deleteWid(widget){
-                widgetService.deleteWidget(widget._id);
-                $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
+                widgetService.deleteWidget(widget._id)
+                    .then(function(response){
+
+                        $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
+
+
+                    })
 
             }
 
             function uploadImage(widget){
 
-                widgetService.updateWidget(widget._id,widget);
-                $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
+                widgetService.updateWidget(widget._id,widget)
+                    .then(function(response){
+                        $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
+                    })
+
 
             }
 
             function updateForWidget(widget){
-                widgetService.updateWidget(widget._id,widget);
-                $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
+                widgetService.updateWidget(widget._id,widget)
+                    .then(function(response){
+                        $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
+                    })
+
 
             }
 
-            function findWidgetType(wId){
-                var type = widgetService.giveWidgetType(wId);
-                return type;
-            }
+
 
         }
     }
