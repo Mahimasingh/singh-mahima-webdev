@@ -19,7 +19,7 @@
 
         function findPageByWebsiteId(userId,webId) {
 
-            var url = "/api/user/" + userId + "/website/" + webId + "/page";
+            var url = "/api/website/" + webId + "/page";
             return $http.get(url)
                 .then(function (response) {
                     return response.data;
@@ -30,7 +30,7 @@
 
 
         function createPage(userId,webId, page) {
-            var url = "/api/user/" + userId + "/website/" + webId +"/page";
+            var url = "/api/website/" + webId +"/page";
             return $http.post(url, page);
 
         }
@@ -39,7 +39,7 @@
 
         function findPageById(userId,websiteId,pageId){
 
-            var url = "/api/user/" + userId + "/website/" + websiteId + "/page/" + pageId;
+            var url = "/api/page/" + pageId;
             return $http.get(url);
 
         }
@@ -48,7 +48,7 @@
 
         function updatePage(userId,websiteId,pageId, page){
 
-            var url = "/api/user/" + userId + "/website/" + websiteId + "/page/" + pageId;
+            var url = "/api/page/" + pageId;
             return $http.put(url,page);
 
         }
@@ -57,7 +57,7 @@
 
         function deletePage(userId,websiteId,pageId){
 
-            var url="/api/user/" + userId + "/website/" + websiteId +"/page/" + pageId;
+            var url="/api/page/" + pageId;
             return $http.delete(url);
 
         }

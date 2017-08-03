@@ -1,10 +1,10 @@
 var app = require("../express");
 
-app.get("/api/user/:userId/website/:websiteId/page",findPageByWebsiteId);
-app.get("/api/user/:userId/website/:websiteId/page/:pageId",findPageById);
-app.post("/api/user/:userId/website/:websiteId/page",createPage);
-app.delete("/api/user/:userId/website/:websiteId/page/:pageId",deletePage);
-app.put("/api/user/:userId/website/:websiteId/page/:pageId",updatePage);
+app.get("/api/website/:websiteId/page",findPageByWebsiteId);
+app.get("/api/page/:pageId",findPageById);
+app.post("/api/website/:websiteId/page",createPage);
+app.delete("/api/page/:pageId",deletePage);
+app.put("/api/page/:pageId",updatePage);
 
 var pages = [
     { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },

@@ -45,6 +45,7 @@ function uploadImage(req, res) {
     var mimetype      = myFile.mimetype;
 
     widget = getWidgetById(widgetId);
+
     widget.url = '/uploads/'+filename;
 
 
@@ -64,6 +65,8 @@ function getWidgetById(widgetId){
             return widgets[w];
 
         }
+
+
     }
 
 }
