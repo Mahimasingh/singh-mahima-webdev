@@ -46,13 +46,25 @@ function uploadImage(req, res) {
 
     widget = getWidgetById(widgetId);
 
+    if(widget == null){
+        widget = createNewWidget(filename,pageId,width);
+    }
+
     widget.url = '/uploads/'+filename;
 
 
 
-    var callbackUrl   = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/" + pageId + "/widget";
+    var callbackUrl   = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/" + pageId + "/widget/" + widget._id;
 
     res.redirect(callbackUrl);
+}
+
+function createNewWidget(filename,pageId,width) {
+    var widget = {'_id' : (new Date()).getTime() + "",'widgetType' : 'IMAGE','url' : "/uploads/"+filename,'pageId' : pageId,'width' : width};
+    widgets.push(widget);
+    return widget;
+
+
 }
 
 function getWidgetById(widgetId){
@@ -65,6 +77,9 @@ function getWidgetById(widgetId){
             return widgets[w];
 
         }
+
+        else
+            return null;
 
 
     }
