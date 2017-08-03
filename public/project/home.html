@@ -8,6 +8,8 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet">
 </head>
+
+
 <body>
 
 <nav class="navbar navbar-default">
@@ -91,10 +93,9 @@
 
             </ul>
             <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Go!</button>
+                <input id="title" class="form-control"/>
+
+                <input id="searchItem" type="button" value="Search" onclick="doFunction();" />
             </form>
 
 
@@ -167,8 +168,49 @@
 
 
     </div>
+        <div id="results"></div>
     </div><!-- /.container-fluid -->
 </nav>
+
+<script>
+    //- Using an anonymous function:
+    document.getElementById("searchItem").onclick = function () {
+        var product=document.getElementById("title").value;
+        var url = "http://svcs.ebay.com/services/search/FindingService/v1";
+        url += "?OPERATION-NAME=findItemsByKeywords";
+        url += "&SERVICE-VERSION=1.0.0";
+        url += "&SECURITY-APPNAME=JheelMeh-MyTestAp-PRD-87a98c72e-48e13fd1";
+        url += "&GLOBAL-ID=EBAY-US";
+        url += "&RESPONSE-DATA-FORMAT=JSON";
+        url += "&callback=_cb_findItemsByKeywords";
+        url += "&REST-PAYLOAD";
+        url += "&keywords="+product;
+        url += "&paginationInput.entriesPerPage=10";
+        s=document.createElement('script'); // create script element
+        s.src= url;
+        document.body.appendChild(s);
+    };
+    // Parse the response and build an HTML table to display search results
+    function _cb_findItemsByKeywords(root) {
+        var items = root.findItemsByKeywordsResponse[0].searchResult[0].item || [];
+        var html = [];
+        html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
+        for (var i = 0; i < items.length; ++i) {
+            var item     = items[i];
+            var title    = item.title;
+            var pic      = item.galleryURL;
+            var viewitem = item.viewItemURL;
+            if (null != title && null != viewitem) {
+                html.push('<tr><td>' + '<img src="' + pic + '" border="0">' + '</td>' +
+                    '<td><a href="' + viewitem + '" target="">' + title + '</a></td></tr>');
+            }
+        }
+        html.push('</tbody></table>');
+        document.getElementById("results").innerHTML = html.join("");
+    }  // End _cb_findItemsByKeywords() function
+    // Submit the request
+</script>
+
 
 </body>
 </html>

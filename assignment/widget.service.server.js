@@ -54,7 +54,7 @@ function uploadImage(req, res) {
 
 
 
-    var callbackUrl   = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/" + pageId + "/widget/" + widget._id;
+    var callbackUrl   = "/assignment/home.html#!/user/"+userId+"/website/"+websiteId+"/page/" + pageId + "/widget/" + widget._id;
 
     res.redirect(callbackUrl);
 }
