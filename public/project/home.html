@@ -12,6 +12,28 @@
 
 <body>
 
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '154945021725695',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+</script>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -150,13 +172,21 @@
 
                         <div class="sign-up-button">
                             <a class="btn btn-default btn-block btn-success"
-                               href="register.html"
+                               href="views/templates/register.view.client.html"
                                role="button">Sign Up</a>
                         </div>
 
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+
+                        <div class="container-fluid pull-right username facebook-icon">
+                            <p style="font-style: italic"> Login with Facebook </p>
+                            <fb:login-button
+                                    scope="public_profile,email"
+                                    onlogin="checkLoginState();">
+                            </fb:login-button>
                         </div>
                     </div>
 

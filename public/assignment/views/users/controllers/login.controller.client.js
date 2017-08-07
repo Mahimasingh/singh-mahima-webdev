@@ -22,6 +22,7 @@
             var promise = userService.findUserByUsernameAndPassword(user.username, user.password);
             promise
                 .then(function (response){
+
                     user = response.data;
                         if(user === null) {
                             model.errorMessage = "User not found";

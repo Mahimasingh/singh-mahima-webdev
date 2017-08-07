@@ -1,4 +1,4 @@
-var app = require("../express");
+var app = require("../../express");
 
 app.get("/api/website/:websiteId/page",findPageByWebsiteId);
 app.get("/api/page/:pageId",findPageById);
