@@ -21,15 +21,16 @@
                     model.websites = websites;
 
                 });
-            websiteService.findWebsiteById(model.userId,model.websiteId)
+            websiteService.findWebsiteById(model.websiteId)
                 .then(function(response){
                     model.website = response.data;
+
                 })
         }
         init();
 
         function updateWeb(website) {
-            websiteService.updateWebsite(model.userId,website._id, website)
+            websiteService.updateWebsite(model.websiteId, website)
                 .then(function(response){
                     $location.url("/user/" + model.userId + "/website");
                 });
@@ -37,7 +38,7 @@
         }
 
         function deleteWeb(website){
-            websiteService.deleteWebsite(website._id)
+            websiteService.deleteWebsite(model.userId,model.websiteId)
                 .then(function(response){
                     $location.url("/user/" + model.userId + "/website");
                 })

@@ -35,16 +35,16 @@
 
         // findWebsiteById(websiteId)
 
-        function findWebsiteById(userId, websiteId){
+        function findWebsiteById(websiteId){
 
             var url = "/api/website/" + websiteId;
-            return $http.get(url);
+            return $http.get(url)
 
         }
 
         // updateWebsite(websiteId, website)
 
-        function updateWebsite(userId,websiteId, website){
+        function updateWebsite(websiteId, website){
 
             var url = "/api/website/" + websiteId;
             return $http.put(url,website);
@@ -52,9 +52,9 @@
 
         // deleteWebsite(websiteId)
 
-        function deleteWebsite(websiteId){
+        function deleteWebsite(userId,websiteId){
 
-            var url="/api/website/" + websiteId;
+            var url="/api/user/"+ userId +"/website/" + websiteId;
             return $http.delete(url);
 
         }

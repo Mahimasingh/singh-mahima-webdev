@@ -8,7 +8,30 @@ userModel.updateUser = updateUser;
 userModel.findUserByCredentials = findUserByCredentials;
 userModel.findUserByUsername = findUserByUsername;
 userModel.deleteUserById = deleteUserById;
+userModel.addWebsite = addWebsite;
+userModel.deleteWebsite = deleteWebsite;
 module.exports = userModel;
+
+function deleteWebsite(userId,websiteId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+            var index = user.websites.indexOf(websiteId);
+            user.websites.splice(index,1);
+            return user.save();
+            
+        });
+
+}
+
+function addWebsite(userId, websiteId){
+    return userModel
+        .findUserById(userId)
+        .then(function(user){
+            user.websites.push(websiteId);
+            return user.save();
+        });
+}
 
 function deleteUserById(userId) {
     return userModel.remove({_id:userId});
