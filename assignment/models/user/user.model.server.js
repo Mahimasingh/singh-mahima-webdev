@@ -12,7 +12,7 @@ userModel.addWebsite = addWebsite;
 userModel.deleteWebsite = deleteWebsite;
 module.exports = userModel;
 
-function deleteWebsite(userId,websiteId) {
+function deleteWebsite(websiteId,pageId) {
     return userModel
         .findUserById(userId)
         .then(function (user) {

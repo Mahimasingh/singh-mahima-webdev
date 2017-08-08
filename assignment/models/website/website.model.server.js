@@ -8,7 +8,31 @@ websiteModel.createWebsiteForUser = createWebsiteForUser;
 websiteModel.deleteWebsite = deleteWebsite;
 websiteModel.findWebsiteById = findWebsiteById;
 websiteModel.updateWebsite = updateWebsite;
+websiteModel.addPage = addPage;
+websiteModel.deletePage = deletePage;
 module.exports = websiteModel;
+
+function addPage(websiteId, pageId) {
+    return websiteModel
+        .findWebsiteById(websiteId)
+        .then(function(website){
+            website._pages.push(pageId);
+            return website.save();
+        });
+}
+
+function deletePage(websiteId,pageId){
+    return websiteModel
+        .findWebsiteById(websiteId)
+        .then(function (website) {
+            var index = website._pages.indexOf(pageId);
+            website._pages.splice(index,1);
+            return website.save();
+
+        });
+
+}
+
 
 function updateWebsite(websiteId, website) {
 
