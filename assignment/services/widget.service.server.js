@@ -66,8 +66,8 @@ function uploadImage(req, res) {
 
 function orderWidget(req,res) {
 
-    var initial = parseInt(req.query['initial']);
-    var final = parseInt(req.query['final']);
+    var initial = parseInt(req.query['startIndex']);
+    var final = parseInt(req.query['endIndex']);
 
 
     widgetModel
