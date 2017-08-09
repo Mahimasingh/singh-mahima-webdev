@@ -93,6 +93,14 @@
                 controllerAs: "model"
             })
 
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId/search",{
+                templateUrl : "views/widgets/templates/flickr.view.client.html",
+                controller : "flickrController",
+                controllerAs : "model"
+
+                }
+            )
+
             // .when("/user/:userId/website/:websiteId/page/:pageId/widget/new/:widgetType", {
             //     templateUrl: "views/widgets/templates/widget-new.view.client.html",
             //     controller: "widgetNewController",

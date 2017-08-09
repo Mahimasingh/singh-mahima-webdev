@@ -152,6 +152,7 @@ function findAllWidgetsForPage(req,res) {
 
     widgetModel
         .findAllWidgetsForPage(pageId)
+        .sort({ order: 1 })
         .then(function (widgets) {
             res.json(widgets);
 
@@ -164,7 +165,8 @@ var widgetTypes = [
     { "widgetType": "HEADING","text" : "HEADING"},
     { "widgetType": "IMAGE", "text" : "IMAGE"},
     { "widgetType": "YOUTUBE", "text" : "YOUTUBE"},
-    { "widgetType": "HTML", "text" : "HTML"}
+    { "widgetType": "HTML", "text" : "HTML"},
+    {"widgetType" : "TEXT", "text" : "TEXT"}
 
 
 ];

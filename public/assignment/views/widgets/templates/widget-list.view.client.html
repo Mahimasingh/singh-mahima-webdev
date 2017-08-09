@@ -48,7 +48,7 @@
                 </div>
 
 
-                <div ng-switch-when="YOUTUBE">
+                <div class = "youtube-widget" ng-switch-when="YOUTUBE">
 
                     <ng-include src="'views/widgets/templates/widget-YOUTUBE.view.client.html'"></ng-include>
 
@@ -57,6 +57,10 @@
                 <div ng-switch-when="HTML">
                     <ng-include src="'views/widgets/templates/widget-HTML.view.client.html'"></ng-include>
 
+                </div>
+
+                <div ng-switch-when="TEXT">
+                    <ng-include src="'views/widgets/templates/widget-TEXT.view.client.html'"></ng-include>
                 </div>
             </div>
             </div>

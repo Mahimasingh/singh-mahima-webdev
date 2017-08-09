@@ -30,7 +30,13 @@
         </div>
 
         <div ng-switch-when="HTML">
-            <ng-include src="'views/widgets/templates/editors/widget-HTML-edit.view.client.html'"
+            <ng-include src="'views/widgets/templates/editors/widget-HTML-edit.view.client.html'">
+
+        </div>
+
+        <div ng-switch-when="TEXT">
+
+            <ng-include src="'views/widgets/templates/editors/widget-TEXT-edit.view.client.html'">
 
         </div>
     </div>
