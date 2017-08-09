@@ -12,8 +12,8 @@ app.delete("/api/page/:pageId/widget/:widgetId",deleteWidget);
 app.post("/api/assignment/page/:pageId/widget", createWidget);
 app.get("/api/page/:pageId/widget",findAllWidgetsForPage);
 app.put("/api/page/:pageId/widget",orderWidget);
-app.get   ('/api/assignment/widgetTypes', findAllWidgetTypes);
-app.post ("/api/assignment/upload", uploadImage);
+app.get('/api/assignment/widgetTypes', findAllWidgetTypes);
+app.post("/api/assignment/upload", uploadImage);
 
 
 var widgets = [
@@ -166,7 +166,7 @@ var widgetTypes = [
     { "widgetType": "IMAGE", "text" : "IMAGE"},
     { "widgetType": "YOUTUBE", "text" : "YOUTUBE"},
     { "widgetType": "HTML", "text" : "HTML"},
-    {"widgetType" : "TEXT", "text" : "TEXT"}
+    { "widgetType" : "TEXT", "text" : "TEXT"}
 
 
 ];
