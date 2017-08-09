@@ -1,3 +1,19 @@
-<h2>Welcome to Html Page. I am not a part of Assignment 3. Please come back next week. For Testing purpose, see the widget object below</h2>
-<br>
-<h5>{{model.widget}}</h5>
+<div class="container-fluid">
+
+
+        <div ng-model="model.widget.text"
+             text-angular
+             ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+            ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+            ['indent','outdent'],['html']]">
+        </div>
+
+    <br>
+    <a ng-click="model.updateForWidget(model.widget)"
+       class="btn btn-block btn-primary">
+        Update
+    </a>
+    <br>
+    <a ng-click="model.deleteWid(model.widget)" class="btn btn-block btn-danger">Delete</a>
+
+</div>

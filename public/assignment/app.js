@@ -6,7 +6,7 @@
     //immediately invoked function expression
 
 
-    angular.module("WamApp", ["ngRoute", "testModule"]);
+    angular.module("WamApp", ["ngRoute", "testModule","textAngular"]);
 
 })();
 
