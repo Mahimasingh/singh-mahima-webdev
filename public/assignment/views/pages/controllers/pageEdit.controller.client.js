@@ -18,6 +18,12 @@
 
         function init() {
 
+            pageService.findPageByWebsiteId(model.userId,model.websiteId)
+                .then(function (pages) {
+                    model.pages = pages;
+
+                });
+
             pageService.findPageById(model.userId,model.websiteId,model.pageId)
                 .then(function(response){
                     model.page = response.data;
