@@ -26,7 +26,7 @@
                     .then(function(response){
 
                         model.widget = response.data;
-                        model.widgetType = model.widget.widgetType;
+                        model.widgetType = model.widget.type;
 
                     })
 
@@ -34,7 +34,7 @@
             init();
 
             function deleteWid(widget){
-                widgetService.deleteWidget(widget._id)
+                widgetService.deleteWidget(model.pageId,model.widgetId)
                     .then(function(response){
 
                         $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
@@ -47,7 +47,7 @@
 
 
             function updateForWidget(widget){
-                widgetService.updateWidget(widget._id,widget)
+                widgetService.updateWidget(model.widgetId,widget)
                     .then(function(response){
                         $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
                     })

@@ -93,11 +93,11 @@
                 controllerAs: "model"
             })
 
-            .when("/user/:userId/website/:websiteId/page/:pageId/widget/new/:widgetType", {
-                templateUrl: "views/widgets/templates/widget-new.view.client.html",
-                controller: "widgetNewController",
-                controllerAs: "model"
-            })
+            // .when("/user/:userId/website/:websiteId/page/:pageId/widget/new/:widgetType", {
+            //     templateUrl: "views/widgets/templates/widget-new.view.client.html",
+            //     controller: "widgetNewController",
+            //     controllerAs: "model"
+            // })
 
 
 

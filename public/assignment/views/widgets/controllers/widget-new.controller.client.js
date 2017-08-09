@@ -9,19 +9,35 @@
             model.websiteId = $routeParams.websiteId;
             model.pageId = $routeParams.pageId;
             //model.widgets = widgetService.findWidgetsByPageId(model.pageId);
-            model.createNewWidget = createNewWidget;
+            model.createWidget = createWidget;
             model.widgetType = $routeParams.widgetType;
 
-            function createNewWidget(widget) {
+            function init() {
 
-                widgetService.createWidget(model.pageId,widget,model.widgetType)
-                    .then(function(response){
 
-                        $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget");
 
-                    })
-
+                fetchWidgetTypes();
             }
+            init();
+
+            function createWidget(widgetType) {
+                widgetService
+                    .createWidget(model.pageId, {type: widgetType})
+                    .then(function (response) {
+                        var widget = response.data;
+                        $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page/" + model.pageId + "/widget/" + widget._id);
+                    });
+            }
+            function fetchWidgetTypes () {
+                widgetService.getWidgetTypes()
+                    .then(
+                        function (response) {
+                            model.widgetTypes = response.data;
+                        }
+                    );
+            }
+
+
 
 
 

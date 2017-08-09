@@ -13,15 +13,18 @@
         model.getTrustedHtml = getTrustedHtml;
         model.getWidgetTemplateUrl = getWidgetTemplateUrl;
 
-        // $(".widget-list").sortable({
-        //     axis: y
-        // });
+        function init() {
 
-        widgetService.findWidgetsByPageId(model.pageId)
-            .then(function (response) {
-                model.widgets = response.data;
+            widgetService.findWidgetsByPageId(model.pageId)
+                .then(function (response) {
+                    model.widgets = response.data;
 
-            })
+                });
+
+        }
+        init();
+
+
 
 
         function getYouTubeEmbedUrl(widgetUrl) {

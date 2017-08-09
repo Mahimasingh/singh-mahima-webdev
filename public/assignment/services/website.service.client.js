@@ -12,9 +12,16 @@
             "createWebsite": createWebsite,
             "updateWebsite": updateWebsite,
             "deleteWebsite": deleteWebsite,
+            "getWidgetTypes" :getWidgetTypes,
             "findWebsiteById" : findWebsiteById
         };
         return api;
+
+        function getWidgetTypes() {
+            var url = '/api/assignment/widgetTypes';
+
+            return $http.get(url);
+        }
 
         function findWebsitesForUser(userId) {
 

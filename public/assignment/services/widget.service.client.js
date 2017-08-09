@@ -13,7 +13,8 @@
             "findWidgetsByPageId": findWidgetsByPageId,
             "findWidgetById": findWidgetById,
             "updateWidget": updateWidget,
-            "deleteWidget" : deleteWidget
+            "deleteWidget" : deleteWidget,
+            "getWidgetTypes" : getWidgetTypes
 
 
         };
@@ -30,13 +31,10 @@
 
 
 
-        function createWidget(pageId, widget,widgetType){
-
-            var url = "/api/page/" + pageId + "/widget?widgetType=" + widgetType;
+        function createWidget(pageId, widget) {
+            var url = "/api/assignment/page/" + pageId + "/widget";
             return $http.post(url, widget);
-
         }
-
         // findWebsiteById(websiteId)
 
         function findWidgetById(widgetId){
@@ -56,11 +54,17 @@
 
         // deleteWebsite(websiteId)
 
-        function deleteWidget(widgetId){
+        function deleteWidget(pageId,widgetId){
 
-            var url = "/api/widget/" + widgetId;
+            var url = "/api/page/" + pageId +"/widget/" + widgetId;
 
             return $http.delete(url);
+        }
+
+        function getWidgetTypes() {
+            var url = '/api/assignment/widgetTypes';
+
+            return $http.get(url);
         }
 
 
