@@ -3,7 +3,7 @@ var widgetModel = require("../models/widget/widget.model.server")
 
 
 var multer = require('multer'); // npm install multer --save
-var upload = multer({ dest: __dirname+'/../public/uploads' });
+var upload = multer({ dest: __dirname+'/../../public/uploads' });
 
 
 app.get("/api/widget/:widgetId", findWidgetById);
@@ -13,7 +13,7 @@ app.post("/api/assignment/page/:pageId/widget", createWidget);
 app.get("/api/page/:pageId/widget",findAllWidgetsForPage);
 app.put("/api/page/:pageId/widget",orderWidget);
 app.get('/api/assignment/widgetTypes', findAllWidgetTypes);
-app.post("/api/assignment/upload", uploadImage);
+app.post("/api/assignment/upload", upload.single('myFile'),uploadImage);
 
 
 var widgets = [
@@ -46,17 +46,14 @@ function uploadImage(req, res) {
     var size          = myFile.size;
     var mimetype      = myFile.mimetype;
 
-    /*  widget = getWidgetById(widgetId);
-     widget.url = '/assignment/uploads/' + filename;
-     var callbackUrl   = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+widgetId+"/IMAGE";
-     */
-    //res.redirect(callbackUrl);
-    var savedUrl = '/assignment/uploads/'+filename;
+    var savedUrl = '/uploads/'+filename;
     widgetModel.updateWidgetUrl(widgetId, savedUrl)
         .then(
             function (status) {
 
-                var callbackUrl   = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/" + pageId + "/widget/" + widget._id;
+                console.log(status);
+
+                var callbackUrl   = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/" + pageId + "/widget/" + widgetId;
                 res.redirect(callbackUrl);
             }
         );
