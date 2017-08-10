@@ -1,7 +1,50 @@
 <div class = "jga">
 <div class="container-fluid">
 
-    <nav class="navbar navbar-default">
+    <div class="row">
+        <div class="col-xs-3 visible-lg">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-brand">
+
+                        <a href="#!/user/{{model.userId}}/website">
+                            <span class="pull-left glyphicon glyphicon-chevron-left"></span></a>
+                        &nbsp
+                        Pages List
+                    </div>
+                    <br>
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new">
+                        <span class="pull-right glyphicon glyphicon-plus"></span></a>
+                </div>
+
+
+            </nav>
+
+            <div class="container-fluid">
+                <div class="pageList">
+                    <ul class="list-group">
+
+                        <li ng-repeat="page in model.pages" class="list-group-item">
+
+                            <a href = "#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                                {{page.name}}</a>
+
+
+                            <a href = "#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
+                                <span class="glyphicon glyphicon-cog pull-right"></span></a>
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-xs-12 col-sm-12 col-md-12">
+
+        <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-brand">
@@ -25,7 +68,7 @@
     <input name ="Name"
            type="text"
            ng-model="model.page.name"
-           readonly
+
            class="form-control"
            id="name"
            placeholder="Blog Post"/>
@@ -58,6 +101,8 @@
         </a>
     </nav>
 
+</div>
+</div>
 </div>
 </div>
 

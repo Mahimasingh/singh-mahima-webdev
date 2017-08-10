@@ -11,15 +11,26 @@
         model.websiteId = $routeParams.websiteId;
 
         function init() {
-            model.websites = pageService.findPageByWebsiteId(model.websiteId);
+            pageService.findPageByWebsiteId(model.userId,model.websiteId)
+                .then(function (pages) {
+
+                    model.pages = pages;
+
+                })
         }
         init();
 
+
+
         function createNewPage(page) {
 
-            var new_page = pageService.createPage(model.websiteId,page);
-            $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page");
-            return new_page;
+            pageService.createPage(model.userId,model.websiteId,page)
+                .then(function(){
+                    $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page");
+
+                })
+
+
         }
 
 

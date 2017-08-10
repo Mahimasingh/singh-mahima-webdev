@@ -1,78 +1,51 @@
+<div class="jga">
+
 <div class="container-fluid">
-
-    <div class="textbox-style">
-
-        <label for="name">Widget Name</label>
-        <input name ="Name"
-               class="form-control"
-               type="text"
-               ng-model = "model.widget.name"
-               id="name"
-        />
-        <br>
-
-        <label for="text">Text</label>
-        <input name ="text"
-               class="form-control"
-               ng-model="model.widget.text"
-               type="text"
-               id="text"
-        />
-        <br>
-
-        <label for="url">URL</label>
-        <input name ="url"
-               class="form-control"
-               id="url"
-               ng-model = "model.widget.url"
-               type="url"
-               placeholder="https://piazza.com/class/j2963bd8jpz51j?cid=638"
-        />
-        <br>
-
-        <label for="width">Width</label>
-        <input name ="width"
-               class="form-control"
-               id="width"
-               ng-model="model.widget.width"
-               placeholder="100%"
-        />
-        <br>
-
-        <label for="upload">Upload</label>
-        <!--div class="wrapper"-->
-
-        <div class="textbox-image">
-            <input name ="uplaod"
-                   class="form-control"
-                   id="upload"
-                   ng-model="model.widget.url"
-                   type="file"
-                   placeholder="No File Choosen"/>
-        </div>
-        <!--div class="choose-button">
-        <!--a class="btn btn-default btn-block btn-primary"
-        role="button">Choose File</a>
-        </div-->
-        <!--/div-->
-
+    <div ng-show="model.error" class="alert alert-danger">
+        {{model.error}}
     </div>
-
-
+    <label for="name">Name</label>
+    <input class="form-control"
+           ng-model="model.widget.type"
+           id="name"/>
     <br>
+
+    <label for="text">Width</label>
+    <input class="form-control"
+           ng-model="model.widget.width"
+           id="text"/>
     <br>
+    <label for="url">URL</label>
+    <input class="form-control"
+           ng-model="model.widget.url"
+           id="url"/>
     <br>
-    <div class="btn-style">
-        <a class="btn btn-default btn-block btn-primary"
-           ng-click="model.uploadImage(model.widget)"
-           role="button">Upload Image</a>
 
-        <a class="btn btn-default btn-block btn-danger"
-           ng-click="model.deleteWid(model.widget)"
-           role="button">Delete</a>
-    </div>
+    <a class="btn btn-info btn-block" href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widget._id}}/search">
+        Search
+    </a>
+    <br>
+    <form action="/api/assignment/upload"   method="post" enctype="multipart/form-data">
+        <input  name="myFile"    type="file" class="form-control"/>
+        <input  name="width"     value="{{model.widget.width}}" style="display: none"/>
+        <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+        <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+        <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+        <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
+        <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
+    </form>
+    <br>
 
-
+    <a ng-click="model.updateForWidget(model.widget)"
+       class="btn btn-block btn-primary">
+        Update
+    </a>
+    <br>
+    <a ng-click="model.deleteWid(model.widget)" class="btn btn-block btn-danger">Delete</a>
 
 
 </div>
+</div>
+
+
+

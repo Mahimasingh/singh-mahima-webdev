@@ -4,7 +4,12 @@
         .module("WamApp")
         .config(configuration);
 
-    function configuration($routeProvider) {
+    function configuration($routeProvider,$httpProvider) {
+
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
+        $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
+        $httpProvider.defaults.headers.post['Access-Control-Max-Age'] = '1728000';
+
         $routeProvider
 
             .when("/", {
@@ -88,11 +93,19 @@
                 controllerAs: "model"
             })
 
-            .when("/user/:userId/website/:websiteId/page/:pageId/widget/new/:widgetType", {
-                templateUrl: "views/widgets/templates/widget-new.view.client.html",
-                controller: "widgetNewController",
-                controllerAs: "model"
-            })
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId/search",{
+                templateUrl : "views/widgets/templates/flickr.view.client.html",
+                controller : "flickrController",
+                controllerAs : "model"
+
+                }
+            )
+
+            // .when("/user/:userId/website/:websiteId/page/:pageId/widget/new/:widgetType", {
+            //     templateUrl: "views/widgets/templates/widget-new.view.client.html",
+            //     controller: "widgetNewController",
+            //     controllerAs: "model"
+            // })
 
 
 

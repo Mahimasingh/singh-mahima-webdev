@@ -18,18 +18,35 @@
 
         function init() {
 
-            model.page = pageService.findPageById(model.pageId);
+            pageService.findPageByWebsiteId(model.userId,model.websiteId)
+                .then(function (pages) {
+                    model.pages = pages;
+
+                });
+
+            pageService.findPageById(model.userId,model.websiteId,model.pageId)
+                .then(function(response){
+                    model.page = response.data;
+                })
         }
         init();
 
         function updateForPage(page) {
-            pageService.updatePage(page._id, page);
-            $location.url("/user/" + model.userId + "/website/" + model.websiteId +"/page" );
+            pageService.updatePage(model.userId,model.websiteId,page._id, page)
+                .then(function(response){
+
+                    $location.url("/user/" + model.userId + "/website/" + model.websiteId +"/page" );
+                })
+
         }
 
         function deleteForPage(page){
-            pageService.deletePage(page._id);
-            $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page");
+            pageService.deletePage(model.userId,model.websiteId,page._id)
+                .then(function(response){
+                    $location.url("/user/" + model.userId + "/website/" + model.websiteId + "/page");
+
+                               });
+
         }
 
 

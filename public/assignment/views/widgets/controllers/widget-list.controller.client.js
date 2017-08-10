@@ -8,10 +8,23 @@
         model.userId = $routeParams.userId;
         model.websiteId = $routeParams.websiteId;
         model.pageId = $routeParams.pageId;
-        model.widgets = widgetService.findWidgetsByPageId(model.pageId);
+
         model.getYouTubeEmbedUrl = getYouTubeEmbedUrl;
         model.getTrustedHtml = getTrustedHtml;
         model.getWidgetTemplateUrl = getWidgetTemplateUrl;
+
+        function init() {
+
+            widgetService.findWidgetsByPageId(model.pageId)
+                .then(function (response) {
+                    model.widgets = response.data;
+
+                });
+
+        }
+        init();
+
+
 
 
         function getYouTubeEmbedUrl(widgetUrl) {

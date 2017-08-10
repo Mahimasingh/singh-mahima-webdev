@@ -19,8 +19,12 @@
             </div>
         </nav>
 
+        <div class="widget-list">
+            <div wbdv-sortable="">
 
-        <div ng-repeat="widget in model.widgets">
+            <div ng-repeat="widget in model.widgets">
+
+
             <div class = "widget-list-toolbar">
 
                 <a href = "#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
@@ -30,8 +34,9 @@
                 </a>
                 <span class =  "pull-right glyphicon glyphicon-align-justify"></span>
             </div>
+                <br>
             <!--<ng-include src="model.getWidgetTemplateUrl(widget.widgetType)"></--ng-include>-->
-            <div ng-switch="widget.widgetType" style="margin-bottom: 50px">
+            <div ng-switch="widget.type" style="margin-bottom: 50px">
                 <div ng-switch-when="HEADING" >
                     <ng-include src="'views/widgets/templates/widget-HEADING.view.client.html'"></ng-include>
 
@@ -44,7 +49,7 @@
                 </div>
 
 
-                <div ng-switch-when="YOUTUBE">
+                <div class = "youtube-widget" ng-switch-when="YOUTUBE">
 
                     <ng-include src="'views/widgets/templates/widget-YOUTUBE.view.client.html'"></ng-include>
 
@@ -54,6 +59,12 @@
                     <ng-include src="'views/widgets/templates/widget-HTML.view.client.html'"></ng-include>
 
                 </div>
+
+                <div ng-switch-when="TEXT">
+                    <ng-include src="'views/widgets/templates/widget-TEXT.view.client.html'"></ng-include>
+                </div>
+            </div>
+            </div>
             </div>
 
             <nav class="navbar navbar-default navbar-fixed-bottom container-fluid">

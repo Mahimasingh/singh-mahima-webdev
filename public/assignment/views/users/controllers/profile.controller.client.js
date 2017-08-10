@@ -14,7 +14,11 @@
 
 
         function init() {
-            model.user = userService.findUserById(userId);
+            userService.findUserById(userId)
+            .then(function (response) {
+                model.user= response.data;
+
+            });
         }
         init();
 
@@ -25,8 +29,11 @@
         }
 
         function unregister(user) {
-            userService.deleteUser(user._id);
-            $location.url("/login");
+            userService.deleteUser(user._id)
+                .then(function(response){
+                    $location.url("/login");
+                });
+
 
 
         }
